@@ -1,0 +1,58 @@
+<div class="form-class">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input
+      id="first-name"
+      type="text"
+      formControlName="firstName"
+      placeholder="First Name"
+    />
+    <span *ngIf="invalidade_first">
+      <img src="assets/icon-error.svg" alt="error icon" />
+    </span>
+    <div class="hint" *ngIf="invalidade_first">
+      <mat-hint> First name cannot be empty</mat-hint>
+    </div>
+
+    <input
+      id="last-name"
+      type="text"
+      formControlName="lastName"
+      placeholder="Last Name"
+    />
+    <span *ngIf="invalidade_last">
+      <img src="assets/icon-error.svg" alt="error icon" />
+    </span>
+    <div class="hint" *ngIf="invalidade_last">
+      <mat-hint> Last name cannot be empty</mat-hint>
+    </div>
+
+    <input
+      id="email"
+      type="text"
+      formControlName="email"
+      placeholder="Email Address"
+    />
+    <span *ngIf="invalidade_email || incorreto_email">
+      <img src="assets/icon-error.svg" alt="error icon" />
+    </span>
+    <div class="hint" *ngIf="incorreto_email">
+      <mat-hint> Please insert valid e-mail</mat-hint>
+    </div>
+    <div class="hint" *ngIf="invalidade_email">
+      <mat-hint> E-mail cannot be empty</mat-hint>
+    </div>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <span *ngIf="invalidade_pass">
+      <img src="assets/icon-error.svg" alt="error icon" />
+    </span>
+    <div class="hint" *ngIf="invalidade_pass">
+      <mat-hint> Password cannot be empty</mat-hint>
+    </div>
+    <button type="submit">claim your free trial</button>
+  </form>
+</div>
